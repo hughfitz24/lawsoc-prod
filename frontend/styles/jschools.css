@@ -1,0 +1,20 @@
+#intro {
+    color: black;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Horizontally center the heading */
+    align-items: center;     /* Vertically center the heading */
+    position: relative;      /* Set container to relative to position overlay */
+}
+
+#intro img {
+    position: absolute;      /* Position image in relation to the container */
+    text-align: center;
+    height: auto;            /* Make the image fill the container vertically */
+    width: 350px;             /* Make the image fill the container horizontally */
+    object-fit: cover;       /* Ensure the image covers the container without distortion */
+    z-index: -1;             /* Ensure the image is behind the text */
+}
+
+

@@ -10,7 +10,7 @@ async function getApiKey() {
         if (!response.ok) {
             throw new Error('Failed to fetch API key from backend');
         }
-        const { secret } = await response.json(); // Assume backend responds with { API_KEY: "your-key" }
+        const { secret } = await response.json(); // Assume backend responds with { secret: "your-key" }
         return secret;
     } catch (error) {
         console.error('Error fetching API key:', error);
@@ -57,7 +57,7 @@ async function loadGoogleCalendarEvents() {
         // Get the current date and the date three weeks from now
         const now = new Date();
         const nextWeek = new Date();
-        nextWeek.setDate(now.getDate() + 21);
+        nextWeek.setDate(now.getDate() + 14);
 
         // Format dates to ISO 8601 format
         const timeMin = now.toISOString();
