@@ -10,8 +10,8 @@ async function getApiKey() {
         if (!response.ok) {
             throw new Error('Failed to fetch API key from backend');
         }
-        const { API_KEY } = await response.json(); // Assume backend responds with { API_KEY: "your-key" }
-        return API_KEY;
+        const { secret } = await response.json(); // Assume backend responds with { API_KEY: "your-key" }
+        return secret;
     } catch (error) {
         console.error('Error fetching API key:', error);
         throw error;
