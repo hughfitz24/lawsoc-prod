@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start with the text below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);    /* End at the original position */
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Start with the text below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);    /* End at the original position */
+    }
+}
+
+h2 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    text-align: center;
+}
+
+h3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    text-align: center;
+}
+
+p {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    text-align: center
+}

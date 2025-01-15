@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    text-align: center;
+}
+
+p {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    text-align: center
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start with the text below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);    /* End at the original position */
+    }
+}
+
+/* Page Body CSS */
+
+body {
+	width: 100%;
+	background-color: white;
+	line-height: 1.5;
+    font-family: 'Lora', serif;
+}
+
+.greenstrip {
+    height: 15px;
+    width: 100%;
+    background-color: #214d46
+}
+
+.purplestrip {
+    height: 15px;
+    width: 100%;
+    background-color: #311a2e
+}
+
+
+#intro {
+    position: relative; /* Make the container a positioning context */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    height: 300px; /* Adjust height to fit your design */
+    overflow: hidden; /* Ensure background doesn't overflow */
+    padding-top: 30px;
+}
+
+#intro img {
+    position: absolute; /* Position the crest absolutely */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the crest */
+    width: 200px; /* Adjust size of the crest */
+    height: auto;
+    opacity: 0.1; /* Make the crest faint */
+    z-index: 1; /* Ensure the crest is behind the heading */
+}
+
+#intro h2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    animation: fadeInUp 2.5s ease-out;  /* Apply the animation */
+    animation-delay: 0.5s;             /* Delay the animation */
+    animation-fill-mode: both;         /* Ensure the text stays visible after the animation */
+}
+
+#introtext {
+    margin-bottom: 50px;
+    font-size: 15px;
+    text-align: center;
+}
+
+#historycontd {
+    display: flex; /* Align the two main containers (left and right) side by side */
+    height: 500px;
+}
+
+#historycontd-container {
+    background-color: white;
+    color: black;
+    width: 50%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#electionphoto-container {
+    height: 500px;
+    overflow: hidden;
+}
+
+#recent {
+    background-color: darkred;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+
+#getintouch {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

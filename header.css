@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+/* Header CSS */
+
+.header-container {
+    display: flex;
+    text-align: center;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ba1b18;
+}
+
+.header-container img {
+    width: 300px;
+    height: 300px;
+}
+
+
+.navbar {
+    background-color:#ba1b18;
+    padding: 10px 0;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: flex-start; /* Align items to the left */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    position: relative;
+    margin: 0 20px;
+    transition: transform 0.3s ease; /* Smooth transformation on hover */
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 20px; /* Adjust padding for better click area */
+    display: block;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth color and scaling transition */
+    border-radius: 5px;
+}
+
+.nav-list a:hover {
+    background-color: #9e1d18; /* Darker red for better contrast */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: block; /* Keep it block for transition effects */
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Prevent interaction when hidden */
+    position: absolute;
+    top: 100%; /* Position it below the parent */
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow for dropdown */
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    color: white;
+    padding: 10px 20px;
+    width: 100%; /* Make the clickable area full width */
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #9e1d18; /* Darker red on hover */
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Interaction allowed */
+    transform: translateY(10px); /* Slide down effect */
+}
+
