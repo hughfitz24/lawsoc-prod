@@ -36,5 +36,9 @@ def get_secret():
         )
 
 # Entrypoint for the Cloud Function
-def main(request):
-    return app(request)
+def get_secret_function(request):
+    """
+    Entry point for the Google Cloud Function
+    """
+    # Return the Flask app's response for the request
+    return app.full_dispatch_request()
