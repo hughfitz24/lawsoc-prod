@@ -1,0 +1,4 @@
+# Ignore the GCP credentials file
+gha-creds-*.json
+.github/
+.git/
