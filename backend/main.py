@@ -1,8 +1,7 @@
 from google.cloud import secretmanager
-from flask import Flask, jsonify, make_response
-
-# Initialize the Flask app
-app = Flask(__name__)
+import os
+from google.cloud import secretmanager
+from flask import jsonify
 
 # Replace with your secret details
 SECRET_NAME = "gcal-api-privkey"
@@ -21,24 +20,13 @@ def access_secret():
     secret_data = response.payload.data.decode("utf-8")
     return secret_data
 
-@app.route("/get-secret", methods=["GET"])
-def get_secret():
+def get_secret(request):
     """
-    Endpoint to fetch the secret.
+    Entry point for the Google Cloud Function
+    This retrieves the secret from Secret Manager.
     """
     try:
-        # Fetch the secret
         secret = access_secret()
         return jsonify({"secret": secret})
     except Exception as e:
-        return make_response(
-            jsonify({"error": "Failed to retrieve secret", "details": str(e)}), 500
-        )
-
-# Entrypoint for the Cloud Function
-def get_secret_function(request):
-    """
-    Entry point for the Google Cloud Function
-    """
-    # Return the Flask app's response for the request
-    return app.full_dispatch_request()
+        return jsonify({"error": "Failed to retrieve secret", "details": str(e)}), 500
