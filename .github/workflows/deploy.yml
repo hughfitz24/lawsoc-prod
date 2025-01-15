@@ -29,3 +29,5 @@ jobs:
         bucket: 'lawsoc-prod-0'
         source: './'
         destination: ''
+        path: './'  # Add this line to specify the path for uploading
+
