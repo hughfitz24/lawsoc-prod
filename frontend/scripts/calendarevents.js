@@ -1,17 +1,28 @@
-// Your Google Calendar API key
-const API_KEY = 'AIzaSyAmjPc3wm6He1cu6qj-SkRea93zZywdc_0';
-// Your Google Calendar ID
+// Your Google Calendar ID (public information)
 const CALENDAR_ID = 'c_273faa41315d4c8fbeadb338d4d8d6d08edad9814e7ba417d0b408e1cc565f56@group.calendar.google.com';
+
+// Backend endpoint to retrieve the API key
+const API_KEY_ENDPOINT = 'https://us-central1-lawsocie-prod.cloudfunctions.net/get-secret';
+
+async function getApiKey() {
+    try {
+        const response = await fetch(API_KEY_ENDPOINT);
+        if (!response.ok) {
+            throw new Error('Failed to fetch API key from backend');
+        }
+        const { API_KEY } = await response.json(); // Assume backend responds with { API_KEY: "your-key" }
+        return API_KEY;
+    } catch (error) {
+        console.error('Error fetching API key:', error);
+        throw error;
+    }
+}
 
 function formatReadableDate(dateString) {
     const date = new Date(dateString);
-
-    // Extract components
     const day = date.getDate();
     const month = date.toLocaleString('default', { month: 'long' });
     const year = date.getFullYear();
-
-    // Determine ordinal suffix
     const ordinalSuffix = (day) => {
         if (day > 3 && day < 21) return 'th';
         switch (day % 10) {
@@ -21,13 +32,12 @@ function formatReadableDate(dateString) {
             default: return 'th';
         }
     };
-
     return `${month} ${day}${ordinalSuffix(day)}, ${year}`;
 }
 
 function generateCalendarLink(event) {
     const baseUrl = "https://calendar.google.com/calendar/render";
-    const start = event.start.dateTime || event.start.date; // Use dateTime or date for all-day events
+    const start = event.start.dateTime || event.start.date;
     const end = event.end.dateTime || event.end.date;
 
     const params = new URLSearchParams({
@@ -39,9 +49,11 @@ function generateCalendarLink(event) {
     return `${baseUrl}?${params.toString()}`;
 }
 
-// Function to fetch and display events for the next week
 async function loadGoogleCalendarEvents() {
     try {
+        // Fetch the API key from backend
+        const API_KEY = await getApiKey();
+
         // Get the current date and the date three weeks from now
         const now = new Date();
         const nextWeek = new Date();
@@ -60,17 +72,15 @@ async function loadGoogleCalendarEvents() {
         const events = data.items || [];
         const eventsContainer = document.getElementById('events-container');
 
-        // Debugging: Log events to verify structure
         console.log('Fetched events:', events);
 
         // Populate the events
         eventsContainer.innerHTML = events
-            .filter(event => event.start) // Ensure event has a start time or date
+            .filter(event => event.start)
             .map(event => {
-                const start = event.start.dateTime || event.start.date; // Handle all-day events
-                const end = event.end.dateTime || event.end.date; // Handle all-day events
+                const start = event.start.dateTime || event.start.date;
+                const end = event.end.dateTime || event.end.date;
 
-                // Debugging: Log each event to verify data
                 console.log('Processing event:', { summary: event.summary, start, end });
 
                 return `
