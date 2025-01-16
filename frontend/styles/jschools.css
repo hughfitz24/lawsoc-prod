@@ -1,6 +1,6 @@
 #intro {
     color: black;
-    height: 350px;
+    height: 20em;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Horizontally center the heading */
@@ -12,9 +12,102 @@
     position: absolute;      /* Position image in relation to the container */
     text-align: center;
     height: auto;            /* Make the image fill the container vertically */
-    width: 350px;             /* Make the image fill the container horizontally */
+    width: 20em;             /* Make the image fill the container horizontally */
     object-fit: cover;       /* Ensure the image covers the container without distortion */
     z-index: -1;             /* Ensure the image is behind the text */
 }
 
+/* General styling for the history section and image container */
+#historycontainer {
+    display: flex;               /* Flexbox layout for the entire container */
+    flex-direction: row;         /* Default to horizontal layout (side by side) */
+    justify-content: center;     /* Center content horizontally */
+    align-items: center;         /* Align content vertically */
+    height: 30em;
+    margin-top: 2em;
+}
 
+#history {
+    width: 50%;                  /* Full width for the paragraph */
+    height: 100%;
+    text-align: center;          /* Center text horizontally */
+    color: white;                /* Optional: Ensures text is white for contrast */
+    background-color: darkred;
+}
+
+#hist-img-container {
+    width: 50%;                  /* Set the container width */
+    height: 100%;                /* Set the container height */
+    position: relative;          /* Necessary for positioning the image and the text */
+    display: flex;               /* Enable flexbox for centering the heading */
+    justify-content: center;     /* Horizontally center the heading */
+    align-items: center;         /* Vertically center the heading */
+    color: white;
+}
+
+#hist-img-container h3 {
+    font-size: 3.5em;
+    z-index: 1;
+}
+
+#hist-img-container img {
+    position: absolute;          /* Position image in relation to the container */
+    top: 0;
+    left: 0;
+    height: 100%;                 /* Make the image fill the container vertically */
+    width: 100%;                  /* Make the image fill the container horizontally */
+    object-fit: cover;            /* Ensure the image covers the container without distortion */
+    z-index: -1;                  /* Ensure the image is behind the text */
+}
+
+#hist-img-container::after {
+    content: '';                  /* Add an empty content for the pseudo-element */
+    position: absolute;           /* Position it within the container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+    z-index: 0;                   /* Overlay should be between the image and the text */
+}
+
+/* Media queries for responsiveness */
+
+/* For devices with a max width of 1024px (laptops) */
+@media (max-width: 1024px) {
+    #historycontainer {
+        flex-direction: row;        /* Keep sections side by side on laptops */
+        height: 500em;
+    }
+}
+
+/* For devices with a max width of 768px (tablets) */
+@media (max-width: 768px) {
+    #historycontainer {
+        flex-direction: column-reverse;     /* Stack sections vertically on tablets */
+        height: 30em;
+    }    
+
+    #hist-img-container h3 {
+        font-size: 2.5em;           /* Adjust heading size for tablets */
+    }
+}
+
+/* For devices with a max width of 480px (smartphones) */
+@media (max-width: 480px) {
+    #historycontainer {
+        flex-direction: column-reverse;     /* Stack sections vertically on small screens */
+    }
+
+    #history, #hist-img-container {
+        width: 90%;                  /* Adjust section width for small screens */
+    }
+
+    #hist-img-container {
+        height: 20em;               /* Reduce the height even more for mobile */
+    }
+
+    #hist-img-container h3 {
+        font-size: 2em;             /* Adjust heading size for smaller screens */
+    }
+}

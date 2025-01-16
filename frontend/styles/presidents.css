@@ -1,0 +1,42 @@
+#headingwrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align children inside the wrapper */
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block; /* Keeps the wrapper size constrained to the image */
+  margin-bottom: 1rem; /* Space between the image and the heading */
+}
+
+img {
+  width: 10em; /* Image size */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Prevent inline spacing below the image */
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 50%; /* Center the line horizontally */
+  bottom: 0; /* Align to the bottom of the image */
+  width: 100%; /* Match the width of the image */
+  height: 0.2em; /* Line thickness */
+  background-color: #214d46; /* Dark green line */
+  transform: translateX(-50%); /* Center the line */
+}
+
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 50%; /* Center the line horizontally */
+  bottom: -0.5rem; /* Spacing below the first line */
+  width: 50%; /* Half the width of the image */
+  height: 0.2em; /* Line thickness */
+  background-color: #311a2e; /* Dark purple line */
+  transform: translateX(-50%); /* Center the line */
+}

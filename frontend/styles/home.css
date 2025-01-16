@@ -10,7 +10,6 @@ body {
 	width: 100%;
 	background-color: white;
 	line-height: 1.5;
-	font-family: 'Poppins', sans-serif;
 }
 
 /* Homepage styling */
@@ -26,10 +25,8 @@ body {
     animation: fadeInUp 2.5s ease-out;  /* Apply the animation */
     animation-delay: 0.5s;             /* Delay the animation */
     animation-fill-mode: both;         /* Ensure the text stays visible after the animation */
-    font-size: 50px;
     position: relative;
     display: inline-block;
-	font-family: 'Playfair Display', serif;
     padding-bottom: 5px; /* Adds space under the underline */
 }
 
@@ -45,6 +42,7 @@ body {
 
 #home-moreinfo {
     display: flex;
+    height: 30em;
 }
 
 #sutherlandimage-container {
@@ -52,21 +50,17 @@ body {
     color: white;
     background-position: center;
     width: 50%;
-    height: 500px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#sutherlandimage-container h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 50px;
-}
 
 #homemoreinfo-textcontainer {
     background-color: white;
     width: 50%;
-    height: 500px;
+    height: 100%;
     display: flex;
     flex-direction: column;      /* Stack the text elements vertically */
     justify-content: center;     /* Vertically center the content */
@@ -82,6 +76,7 @@ body {
 /* Upcoming Events Cards */
 
 #upcoming-events {
+    font-family: "Poppins", serif;
     padding: 40px 20px;
     background-color: #f4f4f4;
     text-align: center;
@@ -106,6 +101,7 @@ body {
 
 /* Event Card */
 .event-card {
+    font-family: 'Poppins';
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -128,6 +124,7 @@ body {
 }
 
 .event-header h3 {
+    font-family: 'Poppins';
     font-size: 1.2rem;
     color: #333;
     margin: 0;
@@ -145,6 +142,7 @@ body {
     border-top: 1px solid #ddd; /* Optional separator */
     padding-top: 20px;
 	padding-bottom: 10px;
+    align-self: center;
 }
 
 /* Add Some Hover Effects for Interaction */

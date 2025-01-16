@@ -50,12 +50,12 @@ body {
 
 #recentdebates {
     display: flex; /* Align the two main containers (left and right) side by side */
+    height: 30em;
 }
 
 #recentdebate-container {
     color: white;
-    width: 75%;   /* Ensure the container spans the full width */
-    height: 500px;
+    width: 75%;   
     display: flex;
     justify-content: center; /* Horizontally center the heading */
     align-items: center;     /* Vertically center the heading */
@@ -98,7 +98,6 @@ body {
 #recentposters-container {
     background-color: #f4f4f4;
     width: 50%;
-    height: 500px;          /* Keep this for controlling the container's height */
     display: flex;
     justify-content: space-evenly; /* Distribute the posters evenly */
     align-items: center;          /* Vertically align posters */
@@ -144,3 +143,19 @@ body {
 
 }
 
+/* Media queries for responsiveness */
+
+/* For devices with a max width of 768px (tablets) */
+@media (max-width: 768px) {
+    #recentdebates {
+        flex-direction: column-reverse;     /* Stack sections vertically on tablets */
+        height: 30em;
+    }    
+}
+
+/* For devices with a max width of 480px (smartphones) */
+@media (max-width: 480px) {
+    #recentdebates {
+        flex-direction: column;     /* Stack sections vertically on small screens */
+    }
+}

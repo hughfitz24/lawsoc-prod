@@ -7,9 +7,9 @@
 .footer {
     background-color: #ba1b18;
     padding: 70px 0;
-	margin-top: 20px;
-	font-family: 'Poppins', sans-serif;
+	margin-top: 3em;
     position: relative; /* Ensures the pseudo-element is positioned relative to the footer */
+	font-family: 'Poppins', serif;
 }
 
 .footer::before {

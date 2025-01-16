@@ -11,7 +11,7 @@ h2 {
     padding-top: 50px;
     padding-bottom: 20px;
     font-family: 'Playfair Display', serif;
-    font-size: 50px;
+    font-size: 2.5em;
     text-align: center;
 }
 
@@ -19,13 +19,13 @@ h3 {
     padding-top: 10px;
     padding-bottom: 10px;
     font-family: 'Playfair Display', serif;
-    font-size: 35px;
+    font-size: 8vw;
     text-align: center;
 }
 
 p {
     font-family: 'Lora', serif;
-    font-size: 15px;
+    font-size: 1em;
     text-align: center
 }
 
@@ -35,6 +35,11 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#committee114 img {
+    width: 75%;
+    height: auto;
 }
 
 #intro {
