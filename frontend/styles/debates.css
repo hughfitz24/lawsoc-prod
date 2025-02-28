@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap');
-
 /* General Reset */
 * {
     margin: 0;
@@ -8,154 +6,189 @@
 }
 
 /* Page Body CSS */
-
 body {
-	width: 100%;
-	background-color: white;
-	line-height: 1.5;
     font-family: 'Lora', serif;
+    background-color: white;
 }
 
-#intro {
-    background-image: 
-        linear-gradient(
-            rgba(0, 0, 0, 0.5), /* Black overlay with 50% opacity */
-            rgba(0, 0, 0, 0.5)  /* Black overlay with 50% opacity */
-        ),
-        url('../images/fitzchamber.jpg'); /* The actual background image */
-    background-size: cover; /* Ensure the image covers the container without stretching */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    color: white; /* Optional: Change text color to white for better contrast */
+/* House Debates Section */
+#house-debates {
+    width: 100%;
     text-align: center;
-    height: 300px;
+}
+
+/* Full-Width Image with Title */
+#intro {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/fitzchamber.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+#intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+/* Full-Width Content Sections */
+#introtext, #conc {
+    width: 100%;
+    font-family: 'Lora', serif;
+    font-size: 1.2em;
+    line-height: 1.8;
+    padding: 40px 10%;
+    background: #f4f4f4;
+    text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #intro h2 {
+        font-size: 2.5em;
+    }
+    #introtext, #conc {
+        font-size: 1em;
+        padding: 30px 5%;
+    }
+}
+
+
+/* Recent Debates Section */
+#recentdebates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Debate Image + Title Overlay */
+#recentdebate-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/debate.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 0;  /* Remove extra padding */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 500px;
+    position: relative;  /* Ensure the overlay title is properly centered */
+}
+
+/* Overlay Title */
+#recentdebate-container h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Playfair Display", serif;
+    font-size: 4vw;
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+/* Posters Container */
+#recentposters-container {
+    background-color: #f4f4f4;
+    width: 100%;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Playfair Display", serif;
-    font-size: 75px;
-    font-weight: 100;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-
-#introtext {
-    background-color: white;
-	font-family: 'Lora';
-    font-size: 15px;
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom:50px;
-}
-
-#recentdebates {
-    display: flex; /* Align the two main containers (left and right) side by side */
-    height: 30em;
-}
-
-#recentdebate-container {
-    color: white;
-    width: 75%;   
-    display: flex;
-    justify-content: center; /* Horizontally center the heading */
-    align-items: center;     /* Vertically center the heading */
-    position: relative;      /* Set container to relative to position overlay */
-}
-
-#recentdebate-container img {
-    position: absolute;      /* Position image in relation to the container */
-    top: 0;
-    left: 0;
-    height: 100%;            /* Make the image fill the container vertically */
-    width: 100%;             /* Make the image fill the container horizontally */
-    object-fit: cover;       /* Ensure the image covers the container without distortion */
-    z-index: -1;             /* Ensure the image is behind the text */
-}
-
-#recentdebate-container::after {
-    content: '';              /* Add an empty content for the pseudo-element */
-    position: absolute;       /* Position it within the container */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
-    z-index: 0;               /* Overlay should be between the image and the text */
-}
-
-#recentdebate-container h2 {
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-size: 50px;
-    font-weight: 300;
-    font-style: normal;
-    text-align: center;
-    z-index: 1;              /* Ensure the text is on top of the overlay */
-}
-
-
-
-#recentposters-container {
-    background-color: #f4f4f4;
-    width: 50%;
-    display: flex;
-    justify-content: space-evenly; /* Distribute the posters evenly */
-    align-items: center;          /* Vertically align posters */
-    flex-wrap: wrap;              /* Allow the posters to wrap to the next line if necessary */
-    overflow: hidden;             /* Hide any overflow if images are larger than the container */
-}
-
-.poster {
-    width: 175px;    /* Adjust width as needed */
-    height: auto;    /* Maintain the aspect ratio of images */
-    margin: 10px;    /* Optional: Add space between posters */
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .poster img {
-    width: 100%;     /* Ensure the image fits within the container */
-    height: auto;    /* Maintain the aspect ratio */
-    max-height: 200px; /* Optional: Limit the max height of images */
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.poster:hover {
-    transform: scale(1.2); /* Slightly lift and scale the logo for a more dynamic hover effect */
-    
-    transition: all 0.3s ease; /* Smooth transition for all properties */
+.poster img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    #recentdebate-container h2 {
+        font-size: 4vw;
+    }
+
+    .poster img {
+        width: 150px;
+    }
+}
+/* Get Involved Section */
 #getinvolved {
     background-color: white;
-    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
 }
 
 #getinvolved h2 {
     font-family: "Playfair Display", serif;
-    font-size: 50px;
-    text-align: center;
-    padding-bottom: 15px;
-    padding-top: 20px;
+    font-size: 3vw;
+    padding-bottom: 10px;
 }
 
-#getinvolved p {
-    font-family: 'Lora';
-    text-align: center;
-    font-size: 15px;
-
-}
-
-/* Media queries for responsiveness */
-
-/* For devices with a max width of 768px (tablets) */
+/* Media Queries */
 @media (max-width: 768px) {
-    #recentdebates {
-        flex-direction: column-reverse;     /* Stack sections vertically on tablets */
-        height: 30em;
-    }    
+    #intro {
+        padding: 0 1rem;
+    }
+
+    #intro h2 {
+        font-size: 4vw;
+    }
+
+    #intro p {
+        font-size: 1.5vw;
+    }
+
+    #main h1, #main h2 {
+        font-size: 3.5vw;
+    }
+
+    #main h3, #main h4 {
+        font-size: 2.5vw;
+    }
+
+    #getinvolved h2 {
+        font-size: 3.5vw;
+    }
 }
 
-/* For devices with a max width of 480px (smartphones) */
 @media (max-width: 480px) {
-    #recentdebates {
-        flex-direction: column;     /* Stack sections vertically on small screens */
+    #intro h2 {
+        font-size: 5vw;
+    }
+
+    #intro p {
+        font-size: 2vw;
+    }
+
+    #main h1, #main h2 {
+        font-size: 4vw;
+    }
+
+    #main h3, #main h4 {
+        font-size: 3vw;
+    }
+
+    #getinvolved h2 {
+        font-size: 4vw;
     }
 }

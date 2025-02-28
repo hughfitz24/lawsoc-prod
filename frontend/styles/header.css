@@ -9,21 +9,21 @@
 .header-container {
     display: flex;
     text-align: center;
-    height: 300px;
+    height: 200px;
     align-items: center;
     justify-content: center;
     background-color: #ba1b18;
 }
 
 .header-container img {
-    width: 300px;
-    height: 300px;
+    width: auto;
+    height: 100%;
 }
 
 
 .navbar {
     background-color:#ba1b18;
-    padding: 10px 0;
+    padding: 10px 10px;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     display: flex;

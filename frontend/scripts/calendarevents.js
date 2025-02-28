@@ -54,10 +54,10 @@ async function loadGoogleCalendarEvents() {
         // Fetch the API key from backend
         const API_KEY = await getApiKey();
 
-        // Get the current date and the date three weeks from now
+        // Get the current date and the date 10 days from now
         const now = new Date();
         const nextWeek = new Date();
-        nextWeek.setDate(now.getDate() + 14);
+        nextWeek.setDate(now.getDate() + 10);
 
         // Format dates to ISO 8601 format
         const timeMin = now.toISOString();

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+/* General Styling */
+#inbrief-intro, #latest-articles, #submission-info {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#inbrief-intro {
+    background-image: url('../images/sutherland-upstairs.jpg'); /* Update with your image path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 10px;
+    padding: 100px 20px; /* Adjust padding to give space for the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds text shadow for readability */
+}
+
+.inbrief-text {
+    font-family: 'Lora', serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    padding-bottom: 10px;
+}
+
+/* Latest Articles Section */
+#articles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.article-card {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.article-meta {
+    font-size: 0.9em;
+    color: gray;
+    margin-bottom: 15px;
+}
+
+.article-content {
+    font-family: 'Lora', serif;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Submission Info Section */
+#submission-info {
+    background-color: #f4f4f4;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+#submission-info a {
+    color: darkred;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#submission-info a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2em;
+    }
+    .inbrief-text, .article-content {
+        font-size: 1em;
+    }
+}
