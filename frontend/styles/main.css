@@ -10,57 +10,185 @@
 @keyframes fadeInUp {
     0% {
         opacity: 0;
-        transform: translateY(20px); /* Start with the text below */
+        transform: translateY(20px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);    /* End at the original position */
+        transform: translateY(0);
     }
 }
 
 @keyframes fadeInDown {
     0% {
         opacity: 0;
-        transform: translateY(-20px); /* Start with the text below */
+        transform: translateY(-20px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);    /* End at the original position */
+        transform: translateY(0);
     }
 }
 
+/* Intro Section */
+#intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+    z-index: 999;
+    color: white;
+}
+
+/* Text Section */
+#introtext {
+    padding: 2em 2em;
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    animation: fadeInDown 1s ease-out;
+}
+
+/* Main Body */
+#mainbody {
+    padding: 3em 4.5em;
+    text-align: center;
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    color: #444;
+}
+
+#mainbody p {
+    font-size: 1rem;
+    margin-bottom: 1.5em;
+}
+
+/* Section for Conclusion or Footer */
+#conc {
+    padding: 4em;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Headings */
+h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+/* Large heading */
 h2 {
+    font-size: 3rem;
     padding-top: 20px;
     padding-bottom: 10px;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5em;
+}
+
+/* Medium heading */
+h3 {
+    font-size: 2.5rem;
+    padding-top: 15px;
+}
+
+/* Smaller heading */
+h4 {
+    font-size: 1.6rem;
+    padding-top: 10px;
+}
+
+/* Paragraph styling */
+p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
     text-align: center;
 }
 
-h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2em;
-}
-
-h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3em;
-}
-
-p {
-    font-family: 'Lora', serif;
-    font-size: 15px;
-    text-align: center
-}
-
+/* Mobile responsiveness */
 @media (max-width: 480px) {
+    #intro h2 {
+        font-size: 4rem;
+    }
+
+    #introtext, #mainbody, #conc {
+        padding: 2em 1.5em;
+    }
+
     p {
-        font-size: 3vw;
+        font-size: 4vw;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
     }
 }
 
+/* Tablet responsiveness */
 @media (min-width: 769px) and (max-width: 1024px) {
+    #intro h2 {
+        font-size: 4.5rem;
+    }
+
+    #introtext, #mainbody, #conc {
+        padding: 2em 2em;
+    }
+
     p {
-        font-size: 1.5vw;
+        font-size: 1.3vw;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    h3 {
+        font-size: 2.3rem;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Large screen */
+@media (min-width: 1025px) {
+    #intro h2 {
+        font-size: 5rem;
+    }
+
+    #introtext, #mainbody, #conc {
+        padding: 3em 6em;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    h4 {
+        font-size: 1.7rem;
     }
 }

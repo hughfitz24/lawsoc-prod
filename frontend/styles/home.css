@@ -3,44 +3,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap');
 
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Page Body CSS */
-
 body {
-	width: 100%;
-	background-color: white;
-	line-height: 1.5;
+    width: 100%;
+    background-color: white;
+    line-height: 1.5;
+    font-family: 'Lora', serif;
 }
 
 /* Homepage styling */
-/* HomePage Introduction */
 #home-intro {
-	padding: 40px 20px;
-	background-color: darkred; 
-	color: white;
-	text-align: center;
+    padding: 40px 20px;
+    background-color: darkred;
+    color: #f4f4f4;
+    text-align: center;
 }
 
 #home-intro h2 {
-    animation: fadeInUp 2.5s ease-out;  /* Apply the animation */
-    animation-delay: 0.5s;             /* Delay the animation */
-    animation-fill-mode: both;         /* Ensure the text stays visible after the animation */
+    animation: fadeInUp 2.5s ease-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
     position: relative;
     display: inline-block;
-    padding-bottom: 5px; /* Adds space under the underline */
+    padding-bottom: 5px;
     font-size: 30px;
+    color: white;
 }
 
-
+/* HomePage Introduction Text */
 .homeintrotext {
-    animation: fadeInDown 2.5s ease-out;  /* Apply the animation */
-    animation-delay: 0.5s;             /* Delay the animation */
-    animation-fill-mode: both;         /* Ensure the text stays visible after the animation */
-	font-size: 15px;
-	padding-top: 10px;
-	font-family: 'Lora', serif;
+    animation: fadeInDown 2.5s ease-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+    font-size: 15px;
+    padding-top: 10px;
+    color: white;
 }
 
+/* More Info Section */
 #home-moreinfo {
     display: flex;
     height: 30em;
@@ -57,26 +86,30 @@ body {
     justify-content: center;
 }
 
+#sutherlandimage-container h2 {
+    color: white;
+    text-align: center;
+}
+
 
 #homemoreinfo-textcontainer {
     background-color: white;
     width: 50%;
     height: 100%;
     display: flex;
-    flex-direction: column;      /* Stack the text elements vertically */
-    justify-content: center;     /* Vertically center the content */
-    align-items: center;         /* Horizontally center the content */
-    text-align: center;          /* Center the text horizontally within each paragraph */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-#homemoreinfo-textcontainer p{
+#homemoreinfo-textcontainer p {
     width: 70%;
     text-align: center;
     font-size: 15px;
 }
 
-/* Upcoming Events Cards */
-
+/* Upcoming Events */
 #upcoming-events {
     font-family: "Poppins", serif;
     padding: 40px 20px;
@@ -91,14 +124,14 @@ body {
     margin-bottom: 30px;
 }
 
-/* Events Grid Container */
+/* Events Grid */
 #events-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     width: 75%;
-    margin: 0 auto; /* Centers the container horizontally */
+    margin: 0 auto;
 }
 
 /* Event Card */
@@ -106,23 +139,22 @@ body {
     font-family: 'Poppins';
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-	height: 300px; 
+    height: 350px;
     width: 300px;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: space-between; /* Space between the header, content, and button */
+    flex-direction: column;
+    justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-	overflow: hidden;
+    overflow: hidden;
 }
 
-/* Event Header: Title and Time in a Row */
 .event-header {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    margin-bottom: 10px; /* Spacing below header */
+    margin-bottom: 10px;
 }
 
 .event-header h3 {
@@ -130,135 +162,195 @@ body {
     font-size: 1.2rem;
     color: #333;
     margin: 0;
-	display: block;
-}
-
-.event-date {
-	color: black;
-	font-style: bold;
 }
 
 .event-description {
     margin-top: 10px;
     line-height: 1.4;
-    border-top: 1px solid #ddd; /* Optional separator */
+    border-top: 1px solid #ddd;
     padding-top: 20px;
-	padding-bottom: 10px;
+    padding-bottom: 10px;
     align-self: center;
 }
 
-/* Add Some Hover Effects for Interaction */
 .event-card:hover {
     background: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
 }
 
-.event-card:hover .event-description {
-    color: #333; /* Slightly darken on hover */
-}
-
-/* GCal Button Styles */
-.event-card .gcal-button {
-	margin-top: auto;
-    display: flex; /* Allows alignment of icon and text */
-    align-items: center; /* Vertically centers content */
-    gap: 8px; /* Adds spacing between icon and text */
-    background-color: #ba1b18; /* Button color */
-    color: white; /* Text and icon color */
-    font-size: 16px; /* Font size for text */
-    font-weight: 600; /* Makes text slightly bold */
-    border: none; /* Removes default border */
-    border-radius: 8px; /* Smooth corners */
-    padding: 10px 20px; /* Adds space inside the button */
-    cursor: pointer; /* Pointer cursor for interactivity */
+.gcal-button {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ba1b18;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none;
 }
 
-/* Hover and Active Effects */
 .gcal-button:hover {
-    background-color: #a31512; /* Darker shade for hover */
-    transform: translateY(-2px); /* Slight lift on hover */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
-    text-decoration: none;
+    background-color: #a31512;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .gcal-button:active {
-    transform: translateY(0); /* Reset on click */
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Pressed shadow */
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Disabled State */
-.gcal-button:disabled {
-    background-color: #ddd;
-    color: #888;
-    cursor: not-allowed;
-    box-shadow: none;
-}
-
-/* Icon Styles */
-.gcal-button i {
-    font-size: 18px; /* Slightly larger for prominence */
-    display: inline-block;
-}
-
+/* Sponsors Section */
 #sponsors {
-	width: 100%;
-	background-color: #ffffff;
-	color: black;
-	text-align: center;
-	padding-bottom: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    color: black;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
 #sponsors h2 {
-	padding-top: 50px;
+    padding-top: 50px;
     font-size: 50px;
-    position: relative;
-    display: inline-block;
-	font-family: 'Playfair Display', serif;
-    padding-bottom: 5px; 
-}
-
-#sponsors p {
-    font-size: 15px;
+    font-family: 'Playfair Display', serif;
 }
 
 .sponsorlogo-container {
-    display: flex; /* Enable flexbox */
-    justify-content: center; /* Horizontally center the logos */
-    align-items: center; /* Vertically center the logos if necessary */
-    flex-wrap: wrap; /* Allow wrapping if there are multiple logos */
-    padding: 20px; /* Add some padding around the container */
-    width: 100%; /* Make the container take up the full width */
-    max-width: 1200px; /* Optional: Limit the width for larger screens */
-    margin: 0 auto; /* Center the container horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .sponsor-logo img {
-    max-width: 100%; /* Ensure logos are responsive */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 150px; /* Optional: Limit logo height for consistency */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sponsor-logo:hover {
-    transform: scale(1.05); /* Slightly lift and scale the logo for a more dynamic hover effect */
-    transition: all 0.3s ease; /* Smooth transition for all properties */
+    transform: scale(1.05);
 }
 
-
-
-/* Optional: Responsive Text Adjustment */
 @media (max-width: 768px) {
     .gcal-button {
-        font-size: 14px; /* Smaller text for smaller screens */
-        padding: 8px 16px; /* Adjust padding */
+        font-size: 14px;
+        padding: 8px 16px;
     }
 
     .gcal-button i {
-        font-size: 16px; /* Adjust icon size */
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #intro h2 {
+        font-size: 4rem;
+    }
+
+    #introtext, #mainbody, #conc {
+        padding: 2em 1.5em;
+    }
+
+    p {
+        font-size: 4vw;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #intro h2 {
+        font-size: 4.5rem;
+    }
+
+    #introtext, #mainbody, #conc {
+        padding: 2em 2em;
+    }
+
+    p {
+        font-size: 1.3vw;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    h3 {
+        font-size: 2.3rem;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    #intro h2 {
+        font-size: 5rem;
+    }
+
+    #introtext, #mainbody, #conc {
+        padding: 3em 6em;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    h4 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #home-moreinfo {
+        flex-direction: column; /* Stack the items vertically */
+        height: auto; /* Adjust the height to auto */
+    }
+
+    #sutherlandimage-container, 
+    #homemoreinfo-textcontainer {
+        width: 100%; /* Make both containers take the full width */
+        height: auto; /* Adjust height to auto */
+    }
+
+    #sutherlandimage-container {
+        height: 500px;
+    }
+
+    #homemoreinfo-textcontainer {
+        padding: 2em;
     }
 }

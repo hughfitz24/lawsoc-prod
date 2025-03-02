@@ -10,7 +10,18 @@ async function loadContent(targetId, fileName) {
 }
 
 // Load header and footer content when the page loads
-document.addEventListener("DOMContentLoaded", function() {
-    loadContent('header', 'header.html');
-    loadContent('footer', 'footer.html');
+document.addEventListener("DOMContentLoaded", async function() {
+    // Load header and footer content
+    await loadContent('header', 'header.html');
+    await loadContent('footer', 'footer.html');
+    });
+
+// JavaScript to toggle the mobile menu
+document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector('.navbar');
+    
+    // Toggle the open class when clicking on any part of the navbar or the menu
+    navbar.addEventListener('click', function() {
+        navbar.classList.toggle('open');
+    });
 });

@@ -1,33 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap');
 
-/* General Styling */
-body {
-    font-family: 'Lora', serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: white;
+    box-sizing: border-box;
 }
 
-/* Contact Intro */
-#contact-intro {
-    background-image: url('../images/contact-banner.jpg'); /* Update with your image */
-    background-size: cover;
-    background-position: center;
+/* Hero Section */
+#contact-hero {
+    background: darkred;
     color: white;
     text-align: center;
     padding: 100px 20px;
-    border-radius: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
 }
 
-.contact-text {
-    font-size: 1.2em;
+#contact-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#contact-hero p {
+    font-size: 1.2rem;
+    font-family: 'Lora', serif;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
+    color: white;
 }
 
-/* Contact Section */
+/* Contact Container */
 #contact-container {
     display: flex;
     flex-wrap: wrap;
@@ -36,24 +40,26 @@ body {
     padding: 60px 20px;
 }
 
+/* Contact Info */
 #contact-info, #contact-form {
     width: 45%;
-    background: #f4f4f4;
+    background: #f9f9f9;
     padding: 40px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Contact Info */
 #contact-info h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 2em;
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
 #contact-info p {
     font-size: 1.1em;
     line-height: 1.6;
+    color: #333;
 }
 
 #contact-info a {
@@ -66,10 +72,26 @@ body {
     text-decoration: underline;
 }
 
+/* Social Media Links */
+#social-links {
+    margin-top: 10px;
+}
+
+#social-links a {
+    font-size: 1.8rem;
+    margin: 0 10px;
+    color: darkred;
+    transition: color 0.3s ease-in-out;
+}
+
+#social-links a:hover {
+    color: #a00;
+}
+
 /* Contact Form */
 #contact-form h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 2em;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
@@ -81,14 +103,19 @@ form {
 label {
     font-weight: bold;
     margin: 10px 0 5px;
+    font-size: 1.1rem;
 }
 
 input, textarea {
     width: 100%;
-    padding: 10px;
-    font-size: 1em;
+    padding: 12px;
+    font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
 }
 
 button {
@@ -96,7 +123,7 @@ button {
     background: darkred;
     color: white;
     padding: 12px;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -116,5 +143,13 @@ button:hover {
 
     #contact-info, #contact-form {
         width: 90%;
+    }
+
+    #contact-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #contact-hero p {
+        font-size: 1rem;
     }
 }

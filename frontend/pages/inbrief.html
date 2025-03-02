@@ -1,45 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="In Brief - UCD Law Society's rolling legal publication. Explore articles, opinions, and legal analysis by students.">
-    <title>In Brief - UCD Law Society</title>
-    <link rel="icon" href="../images/ucdlawsoc.png" type="image/png">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/inbrief.css">
-    <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-<body>
-    <!-- Header Section -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="UCD Law Society official website. Learn more about our events, debates, and archives."
+    />
+    <title>UCD Law Society</title>
+    <link rel="icon" href="../images/ucdlawsoc.png" type="image/png" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <style>
+      #intro {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("../images/mooting.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        text-align: center;
+        height: 30em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: 100;
+        font-optical-sizing: auto;
+        font-style: normal;
+        margin-bottom: 3em;
+      }
+
+      body {
+        background-color: #fdfdfb;
+        color: #222;
+        font-family: "Lora", serif;
+        line-height: 1.8;
+      }
+
+      h1,
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        color: #311a2e;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #9b7f50;
+      }
+
+      p {
+        font-size: 1.2rem;
+        text-align: left;
+        color: #444;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: auto;
+        text-align: left;
+      }
+
+      #submission-info {
+        background: #f8f5f0;
+        padding: 40px;
+        margin-top: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #submission-info p {
+        font-size: 1.3rem;
+        color: #333;
+      }
+
+      #submission-info a {
+        color: #8b5e3b;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      #submission-info a:hover {
+        text-decoration: underline;
+      }
+
+      .divider {
+        width: 60%;
+        height: 2px;
+        background: #9b7f50;
+        margin: 30px auto;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+            padding: 30px;
+        }
+        h1 {
+          font-size: 3rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #intro h2 {
+          font-size: 4rem;
+        }
+
+        #introtext,
+        #mainbody,
+        #conc {
+          padding: 2em 1.5em;
+        }
+
+        p {
+          font-size: 4vw;
+        }
+
+        h2 {
+          font-size: 2.5rem;
+        }
+
+        h3 {
+          font-size: 2rem;
+        }
+
+        h4 {
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (min-width: 1025px) {
+        #intro h2 {
+          font-size: 5rem;
+        }
+
+        #introtext,
+        #mainbody,
+        #conc {
+          padding: 3em 6em;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        h2 {
+          font-size: 3.5rem;
+        }
+
+        h3 {
+          font-size: 2.5rem;
+        }
+
+        h4 {
+          font-size: 1.7rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <header id="header"></header>
-    
-    <!-- Main Content Section -->
     <main>
-        <section id="inbrief-intro">
-            <h2>Welcome to In Brief</h2>
-            <p class="inbrief-text">In Brief is the UCD Law Society's rolling legal publication, featuring insightful articles, opinions, and analysis from students and legal professionals.</p>
-            <p class="inbrief-text">Stay updated on legal trends, case law, and student perspectives on contemporary legal issues.</p>
+      <div class="container">
+        <h1>In Brief</h1>
+        <section id="introduction">
+          <h2>A Call for Submissions</h2>
+          <p>
+            The Law Society of UCD proudly presents <em>In Brief</em>, a new
+            platform for legal discussion, insightful analysis, and scholarly
+            contributions from students and legal professionals alike.
+          </p>
+          <p>
+            We invite you to be part of our inaugural set of submissions.
+            Whether you wish to examine contemporary legal debates, offer a
+            critique of landmark cases, or explore emerging areas of law, your
+            voice is valued.
+          </p>
         </section>
-        
-        <section id="latest-articles">
-            <h2>Featured Articles</h2>
-            <div id="articles-container">
-                <!-- Dynamic Generation by inbriefarticles.js -->
-            </div>
+        <div class="greenstrip"></div>
+        <div class="purplestrip"></div>
+
+        <section id="submission-guidelines">
+          <h2>Submission Guidelines</h2>
+          <p>
+            Submissions are welcome from students or professionals from any
+            background or experience.
+          </p>
+          <p>
+            Submissions should be original, well-researched, and written in a
+            clear, professional manner. Contributions may include:
+          </p>
+          <ul>
+            <li>Opinion pieces on pressing legal issues</li>
+            <li>Case law analysis & case notes</li>
+            <li>Legislative reviews</li>
+            <li>Legal history and theory</li>
+          </ul>
+          <p>
+            To submit your article for consideration, please contact
+            <a href="mailto:auditor@lawsoc.ie">auditor@lawsoc.ie</a>.
+          </p>
         </section>
-        
+        <div class="divider"></div>
         <section id="submission-info">
-            <h2>Submit Your Article</h2>
-            <p>We welcome submissions from students and legal professionals. Share your insights, opinions, and research with the UCD Law Society community.</p>
-            <p>To submit an article, please email <a href="mailto:editor@lawsoc.ie">editor@lawsoc.ie</a>.</p>
+          <h2>Submission Instructions</h2>
+          <p>
+            Please ensure your submission aligns with the guidelines above. We
+            encourage diverse topics related to law.
+          </p>
         </section>
+      </div>
     </main>
-    
+
     <footer id="footer"></footer>
-    <script src="../scripts/inbriefarticles.js"></script>
     <script src="../scripts/headerfooter.js"></script>
-</body>
+  </body>
 </html>
