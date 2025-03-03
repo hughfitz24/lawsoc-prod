@@ -57,7 +57,7 @@ async function loadGoogleCalendarEvents() {
         // Get the current date and the date 10 days from now
         const now = new Date();
         const nextWeek = new Date();
-        nextWeek.setDate(now.getDate() + 10);
+        nextWeek.setDate(now.getDate() + 8);
 
         // Format dates to ISO 8601 format
         const timeMin = now.toISOString();

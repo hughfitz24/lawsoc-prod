@@ -2,8 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
-/* Footer */ 
-
+/* Footer Styles */
 .footer {
     background-color: #ba1b18;
     padding: 50px 0;
@@ -33,6 +32,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 20px;
 }
 
 .row {
@@ -45,15 +45,21 @@
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-logo {
     width: 20%;
-    padding: 0 15px;
+    text-align: center;
+}
+
+.footer-logo img {
+    max-width: 100%;
+    height: auto;
 }
 
 .footer-col {
-    width: 25%;
+    width: 22%;
     padding: 0 15px;
 }
 
@@ -61,27 +67,20 @@ ul {
     font-size: 1.2rem;
     color: #ffffff;
     text-transform: capitalize;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-weight: 500;
     position: relative;
+    display: inline-block; /* Ensures proper alignment */
+    width: fit-content; /* Prevents the underline from misaligning */
 }
 
-.footer-col h4::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    background-color: #ffffff;
-    height: 2px;
-    width: 35px;
-}
 
 .footer-col ul li:not(:last-child) {
     margin-bottom: 10px;
 }
 
 .footer-col ul li a {
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-transform: capitalize;
     color: #bbbbbb;
     text-decoration: none;
@@ -95,60 +94,69 @@ ul {
     padding-left: 8px;
 }
 
+/* Social Media Links */
+.footer-col .social-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
 .footer-col .social-links a {
     display: inline-block;
     height: 40px;
     width: 40px;
     background-color: rgba(255,255,255,0.2);
-    margin: 0 10px 10px 0;
     text-align: center;
     line-height: 40px;
     border-radius: 50%;
     color: #ffffff;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
 }
 
 .footer-col .social-links a:hover {
-    color: #24262b;
     background-color: #ffffff;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .footer-col {
-        width: 50%;
-        margin-bottom: 30px;
-    }
+    color: #24262b;
 }
 
 @media (max-width: 768px) {
-    .footer-container {
-        max-width: 100%;
-        padding: 0 20px;
+    .footer {
+        padding: 40px 0;
+        text-align: center;
     }
 
-    .row {
+    .footer-container {
         flex-direction: column;
         align-items: center;
-    }
-
-    .footer-col {
         width: 100%;
-        text-align: center;
+        padding: 0 15px; /* Prevent overflow */
+        display: flex; /* Ensure items stack vertically */
+        gap: 30px; /* Space between columns */
     }
 
     .footer-logo {
         width: 100%;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 20px; /* Add space below the logo */
     }
 
-    .footer-col ul li a {
-        font-size: 1.2rem;
+    .footer-col {
+        width: 100%; /* Make each column take full width */
+        text-align: center;
+        margin-bottom: 20px; /* Add space between columns */
     }
 
     .footer-col h4 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .footer-col ul li a {
+        font-size: 1.1rem;
+    }
+    
+    .footer-col .social-links {
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -157,11 +165,27 @@ ul {
         padding: 30px 0;
     }
 
+    .footer-container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
     .footer-col {
         width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-col h4 {
+        font-size: 1.3rem;
+    }
+
+    .footer-col ul li a {
+        font-size: 1rem;
     }
 
     .footer-col .social-links {
         justify-content: center;
+        align-items: center;
     }
 }

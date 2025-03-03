@@ -1,10 +1,6 @@
+/* Intro Section */
 #intro {
-    background-image: 
-        linear-gradient(
-            rgba(0, 0, 0, 0.5), 
-            rgba(0, 0, 0, 0.5) 
-        ),
-        url('../images/mooting.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/sutherlandstatute.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,35 +11,40 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-weight: 100;
-    font-optical-sizing: auto;
-    font-style: normal;
+    font-weight: 400;
     margin-bottom: 3em;
 }
 
+#intro h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5em;
+}
+
+#intro h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+/* Body Styles */
 body {
     background-color: #fdfdfb;
     color: #222;
-    font-family: 'Lora', serif;
+    font-family: "Lora", serif;
     line-height: 1.8;
-    padding: 40px 10%;
 }
 
 h1, h2 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: #311a2e;
+    font-family: "Playfair Display", serif;
+    color: white;
     text-align: center;
 }
 
 h1 {
     font-size: 3.5rem;
-    margin-bottom: 15px;
 }
 
 h2 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
     color: #9b7f50;
 }
 
@@ -54,23 +55,22 @@ p {
     margin-bottom: 20px;
 }
 
+/* Container */
 .container {
     max-width: 900px;
     margin: auto;
+    padding: 2em;
     text-align: left;
 }
 
+/* Submission Info */
 #submission-info {
     background: #f8f5f0;
     padding: 40px;
     margin-top: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-#submission-info p {
-    font-size: 1.3rem;
-    color: #333;
+    text-align: center;
 }
 
 #submission-info a {
@@ -83,6 +83,7 @@ p {
     text-decoration: underline;
 }
 
+/* Divider */
 .divider {
     width: 60%;
     height: 2px;
@@ -90,19 +91,26 @@ p {
     margin: 30px auto;
 }
 
-footer {
-    margin-top: 60px;
-    padding: 20px;
-    text-align: center;
-    font-size: 1rem;
-    color: #666;
+/* Button */
+.btn {
+    display: inline-block;
+    background-color: #9b7f50;
+    color: #f0f0f0;;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
 }
 
-@media (max-width: 768px) {
-    body {
-        padding: 30px 5%;
-    }
+.btn:hover {
+    background-color: #9b7f50;
+    transform: translateY(-2px);
+}
 
+/* Responsive Styles */
+@media (max-width: 768px) {
     h1 {
         font-size: 3rem;
     }
@@ -114,56 +122,27 @@ footer {
     p {
         font-size: 1.1rem;
     }
+
+    .container {
+        padding: 20px;
+    }
 }
 
 @media (max-width: 480px) {
+    #intro h1 {
+        font-size: 3rem;
+    }
+
     #intro h2 {
-        font-size: 4rem;
-    }
-
-    #introtext, #mainbody, #conc {
-        padding: 2em 1.5em;
-    }
-
-    p {
-        font-size: 4vw;
-    }
-
-    h2 {
-        font-size: 2.5rem;
-    }
-
-    h3 {
-        font-size: 2rem;
-    }
-
-    h4 {
-        font-size: 1.2rem;
-    }
-}
-
-@media (min-width: 1025px) {
-    #intro h2 {
-        font-size: 5rem;
-    }
-
-    #introtext, #mainbody, #conc {
-        padding: 3em 6em;
+        font-size: 1.8rem;
     }
 
     p {
         font-size: 1rem;
     }
 
-    h2 {
-        font-size: 3.5rem;
-    }
-
-    h3 {
-        font-size: 2.5rem;
-    }
-
-    h4 {
-        font-size: 1.7rem;
+    .btn {
+        font-size: 1rem;
+        padding: 8px 16px;
     }
 }

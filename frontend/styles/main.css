@@ -54,7 +54,7 @@
 
 /* Main Body */
 #mainbody {
-    padding: 3em 4.5em;
+    padding: 2em 4.5em;
     text-align: center;
     font-family: 'Lora', serif;
     line-height: 1.6;
@@ -68,8 +68,8 @@
 
 /* Section for Conclusion or Footer */
 #conc {
-    padding: 4em;
-    margin-top: 20px;
+    padding: 2em;
+    margin-top: 10px;
     text-align: center;
     font-family: 'Lora', serif;
     font-size: 1.1rem;
