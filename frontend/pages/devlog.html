@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Development process of the UCD Law Society website."
+    />
+    <title>Building the UCD Law Society Website</title>
+    <link rel="icon" href="../images/ucdlawsoc.png" type="image/png" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <style>
+      #intro {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("../images/lawsocwhite.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        text-align: center;
+        height: 30em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #intro h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 4rem;
+        font-weight: 700;
+        animation: fadeInUp 1s ease-out;
+      }
+      #mainbody {
+        max-width: 800px;
+        margin: 2em auto;
+        padding: 2em;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      #mainbody p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 1em;
+      }
+      #mainbody ul {
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header"></header>
+
+    <!-- Intro Section -->
+    <section id="intro">
+      <h2>Building the UCD Law Society Website</h2>
+    </section>
+
+    <!-- Blog Content -->
+    <section id="mainbody">
+      <h3 id="the-plan">The Plan</h3>
+      <p>
+        The UCD Law Society needed a modern, lightweight, and easily
+        maintainable website to showcase events, archives, and society news.
+        When I approached this task, the tech stack of LawSoc was a strange one.
+        A WordPress instance was being hosted on a shared VPC with our domain
+        provider, which was expensive and also uneditable! We had lost access to
+        the WordPress instance, so our website was essentially useless. I
+        decided to take on the development, and give my first full-stack project
+        a go!
+      </p>
+      <p>
+        Low cost was a priority here, so I decided to go with a cloud native
+        approach. We were paying a hefty amount for our shared VPC, and the
+        cloud native philosophy of “pay for what you use” was very appealing for
+        a low cost development.
+      </p>
+      <h3 id="technical-stack">Technical Stack</h3>
+      <p>
+        To get a balance between simplicity, performance, and cost, I opted for
+        a static-site architecture with selective dynamic elements:
+      </p>
+      <ul>
+        <li>
+          Static Hosting: Google Cloud Storage Buckets with HTML/CSS/JS
+          frontend.
+        </li>
+        <li>CDN &amp; Security: Cloudflare CDN with proxy and caching.</li>
+        <li>
+          Minimal Dynamic Content: A serverless function for retrieving API keys
+          for dynamic content rendering.
+        </li>
+      </ul>
+      <h3 id="deployment-optimization">Deployment &amp; Optimization</h3>
+      <p>
+        The site is deployed as a static HTML site, removing the need for
+        database dependencies. I chose the below deployment strategies to
+        maximise performance:
+      </p>
+      <ul>
+        <li>
+          Cloudflare Caching – Reducing server load and improving response
+          times.
+        </li>
+        <li>
+          CI/CD Principles - Changes to the site are deployed through a GitHub
+          Action, authenticating to GCloud and publishing changes to the bucket.
+        </li>
+      </ul>
+      <h3 id="maintenance-future-expansion">
+        Maintenance &amp; Future Expansion
+      </h3>
+      <p>
+        A big priority in this project was easy maintenance, I won’t be around
+        the society forever, so I needed to make sure it could be worked on
+        without proprietary knowledge of web dev. The system is designed to be
+        low-maintenance, with updates of upcoming society events being handled
+        with a mini Google Calendar trick:
+      </p>
+      <p>
+        To update events for the homepage, it is handled through a Google
+        Calendar. Whoever wants to add an event to the front page adds the event
+        to a specific Google Calendar (access to this calendar is very
+        granular!). When the front page page is loaded, a JS function makes a
+        call to the API to access the event details, and dynamically generate
+        HTML that displays these events on the homepage! The API key is fetched
+        using a Cloud Function - the calendar is public, and the API key is read
+        only, so the security of this key is not paramount. It doesn’t retrieve
+        any info that you couldn’t just find on the Google Calendar itself!
+      </p>
+      <p>
+        Next step in development is updates handled through Markdown-to-HTML
+        conversion. This allows for easy content management without the need for
+        a full CMS. This is a fun aspect to the development that will be sure to
+        play out in an interesting way.
+      </p>
+      <h3 id="how-i-broke-our-dns">How I Broke Our DNS</h3>
+      <p>It&#39;s always the DNS…</p>
+      <p>
+        Part of the new design was to migrate our DNS management to Cloudflare.
+        This provides us a secure CDN, with better support for caching.
+      </p>
+      <p>
+        When migrating over our DNS, and connecting to our new nameservers, I
+        made the mistake of not moving our MX DNS records. This essentially
+        broke our connection to Google Cloud for our email hosting. Thankfully,
+        this issue only persisted for about a day or so. The email issue was
+        pointed out to me, I checked back and realised my mistake, and updated
+        our records accordingly.
+      </p>
+      <p>
+        Another relief was the fact that most modern email providers will
+        attempt emails repeatedly for up to 72 hours. Emails that we did not
+        receive due to this error were then subsequently received in inboxes.
+      </p>
+      <p>
+        While it was a pain at the time, it taught me a
+        good lesson about DNS management. This mistake definitely
+        won&#39;t be repeated!
+      </p>
+    </section>
+    <hr />
+    <section id="conc">
+      <p>
+        <h2 id="conclusion">Conclusion</h2>
+      <p>
+        With this foundation, the UCD Law Society website is built to be fast,
+        secure, and future-proof. I prioritised low-cost development, with a
+        cost reduction from 70 Euro Per Year to just over 6 Euro Per Year
+        (projected by GCP). This was a great project, and many thanks to Emma
+        and the rest of the LawSoc team for letting me take it on!
+      </p>
+      </p>
+      <p>
+        Off to learn DNS properly now...
+      </p>
+      <p>Hugh Fitzpatrick</p>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+    <script src="../scripts/headerfooter.js"></script>
+  </body>
+</html>

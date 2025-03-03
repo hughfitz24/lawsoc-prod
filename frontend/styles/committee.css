@@ -7,55 +7,87 @@
     box-sizing: border-box;
 }
 
-#committee114 {
-    padding-top: 50px;
+#mainbody {
+    padding: 50px 5%; /* Adjust padding for better responsiveness */
+    width: 100%;
+    margin: 0 auto; /* Center the container horizontally */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-#committee114 img {
-    width: 75%;
+#mainbody img {
+    width: 100%; /* Ensure full width on smaller screens */
     height: auto;
+    margin: 20px auto; /* Center and add spacing */
+    display: block;
+    align-self: center;
 }
 
 #intro {
     color: white;
-    height: 500px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Horizontally center the heading */
-    align-items: center;     /* Vertically center the heading */
-    position: relative;      /* Set container to relative to position overlay */
-    padding-left: 30px;
-    padding-right: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 5%; /* Adjust padding for smaller screens */
+    text-align: center;
 }
 
 #intro img {
-    position: absolute;      /* Position image in relation to the container */
+    position: absolute;
     top: 0;
     left: 0;
-    height: 100%;            /* Make the image fill the container vertically */
-    width: 100%;             /* Make the image fill the container horizontally */
-    object-fit: cover;       /* Ensure the image covers the container without distortion */
-    z-index: -1;             /* Ensure the image is behind the text */
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 #intro::after {
-    content: '';              /* Add an empty content for the pseudo-element */
-    position: absolute;       /* Position it within the container */
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
-    z-index: 0;               /* Overlay should be between the image and the text */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
 }
 
-#intro h2, p {
-    width: 70%;
+#intro h2, #intro p {
+    width: 90%;
+    max-width: 700px;
     font-style: normal;
-    text-align: center;
-    z-index: 5;              /* Ensure the text is on top of the overlay */
+    z-index: 5;
+    padding: 10px;
+}
+
+#intro h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive font size */
+    font-weight: 700;
+}
+
+#intro p {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem); /* Responsive font size */
+    line-height: 1.5; /* Improve readability */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #committee114 {
+        padding: 40px 3%;
+    }
+}
+
+@media (max-width: 480px) {
+    #committee114 img {
+        width: 100%;
+    }
+    #intro {
+        padding: 10% 5%;
+    }
 }
