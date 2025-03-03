@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
-
-/* Header CSS */
-
+/* Header Styles */
 .header-container {
     display: flex;
     text-align: center;
@@ -20,20 +15,22 @@
     height: 100%;
 }
 
-
+/* Navbar */
 .navbar {
-    background-color:#ba1b18;
+    background-color: #ba1b18;
     padding: 10px 10px;
     font-family: 'Poppins', sans-serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
+    background-color: #ba1b18;
 }
 
+/* Navigation List */
 .nav-list {
     display: flex;
     list-style: none;
-    justify-content: flex-start; /* Align items to the left */
+    justify-content: center;
     padding: 0;
     margin: 0;
 }
@@ -41,38 +38,34 @@
 .nav-list li {
     position: relative;
     margin: 0 20px;
-    transition: transform 0.3s ease; /* Smooth transformation on hover */
 }
 
 .nav-list a {
     text-decoration: none;
     color: white;
-    padding: 12px 20px; /* Adjust padding for better click area */
+    padding: 12px 20px;
     display: block;
     font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth color and scaling transition */
+    transition: background-color 0.3s ease;
     border-radius: 5px;
 }
 
 .nav-list a:hover {
-    background-color: #9e1d18; /* Darker red for better contrast */
+    background-color: #9e1d18;
 }
 
 /* Dropdown Menu */
 .dropdown-menu {
-    display: block; /* Keep it block for transition effects */
-    opacity: 0; /* Initially invisible */
-    visibility: hidden; /* Prevent interaction when hidden */
+    display: none;
     position: absolute;
-    top: 100%; /* Position it below the parent */
+    top: 100%;
     left: 0;
     background-color: #333333;
     list-style: none;
     padding: 10px 0;
     border-radius: 5px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow for dropdown */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
 }
 
 .dropdown-menu li {
@@ -82,19 +75,77 @@
 .dropdown-menu a {
     color: white;
     padding: 10px 20px;
-    width: 100%; /* Make the clickable area full width */
+    width: 100%;
     display: block;
     transition: background-color 0.3s ease;
 }
 
 .dropdown-menu a:hover {
-    background-color: #9e1d18; /* Darker red on hover */
+    background-color: #9e1d18;
 }
 
 /* Show Dropdown on Hover */
 .dropdown:hover .dropdown-menu {
-    opacity: 1; /* Fully visible */
-    visibility: visible; /* Interaction allowed */
-    transform: translateY(10px); /* Slide down effect */
+    display: block;
 }
 
+/* --- Responsive Styles --- */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1001;
+}
+
+.menu-toggle div {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}
+/* Mobile View */
+@media (max-width: 768px) {
+
+    .header-container {
+        height: 300px;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #ba1b18;
+        text-align: center;
+    }
+
+    .nav-list.active {
+        display: flex;
+        z-index: 2000;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background-color: #9e1d18;
+        width: 100%;
+        text-align: center;
+        z-index: 2001;
+    }
+}

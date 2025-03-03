@@ -27,24 +27,38 @@ img {
   margin-bottom: 2em;
 }
 
-.image-wrapper::after {
-  content: "";
-  position: absolute;
-  left: 50%; /* Center the line horizontally */
-  bottom: 0; /* Align to the bottom of the image */
-  width: 100%; /* Match the width of the image */
-  height: 0.2em; /* Line thickness */
-  background-color: #214d46; /* Dark green line */
-  transform: translateX(-50%); /* Center the line */
+h3 {
+  padding: 1em;
+  background-color: #f4f4f4;
+  border-top: 2px solid #311a2e;
+  border-bottom: 2px solid #214d46;
+  font-size: 1.2em;
+  margin-top: 20px;
 }
 
-.image-wrapper::before {
-  content: "";
-  position: absolute;
-  left: 50%; /* Center the line horizontally */
-  bottom: -0.5rem; /* Spacing below the first line */
-  width: 50%; /* Half the width of the image */
-  height: 0.2em; /* Line thickness */
-  background-color: #311a2e; /* Dark purple line */
-  transform: translateX(-50%); /* Center the line */
+section {
+  margin-bottom: 2em;
+}
+
+section h4 {
+  font-size: 1.1em;
+  color: #311a2e;
+  font-weight: bold;
+}
+
+section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+section ul li {
+  padding: 0.5em 0;
+  font-size: 1.1em;
+}
+
+section ul li::before {
+  content: "\2022"; /* Adds a bullet point */
+  color: #214d46; /* Dark green */
+  font-size: 1.5em;
+  margin-right: 0.5em;
 }

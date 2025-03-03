@@ -192,10 +192,13 @@ body {
     border: none;
     border-radius: 8px;
     padding: 10px 20px;
+    margin-bottom: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none;
+    justify-content: center;
+    text-align: center;
 }
 
 .gcal-button:hover {
@@ -254,6 +257,10 @@ body {
 
     .gcal-button i {
         font-size: 16px;
+    }
+
+    .event-card {
+        height: 400px;
     }
 }
 
