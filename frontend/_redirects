@@ -1,0 +1,4 @@
+/ /pages/index.html 200
+
+# Catch-all rule for all .html files
+/:path /:path.html 200
