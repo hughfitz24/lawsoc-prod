@@ -1,4 +1,0 @@
-/ /pages/index.html 200
-
-# Rewrite clean URLs to HTML files inside 'pages' directory
-/:path /pages/:path.html 200
