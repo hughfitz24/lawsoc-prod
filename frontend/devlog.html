@@ -52,6 +52,13 @@
       #mainbody ul {
         padding-left: 20px;
       }
+
+      #mainbody img {
+        width: 75%; 
+        align-self: center;
+        height: auto;
+        padding: 30px;
+      }
     </style>
   </head>
   <body>
@@ -113,8 +120,17 @@
           times.
         </li>
         <li>
-          CI/CD Principles - Changes to the site are deployed through a GitHub
-          Action, authenticating to GCloud and publishing changes to the bucket.
+          CI/CD Principles - Changes to the site are deployed through GitOps via the Cloudflare pages setup.
+        </li>
+      </ul>
+      <img src="images/traffic.png" alt="Traffic Flow Diagram">
+      <h4>Next Deployment Changes</h4>
+      <ul>
+        <li>
+          Control Cloudflare configuration through Terraform Infra as Code. 
+        </li>
+        <li>
+          Automate Git pushes further for easier non-technical maintenance (read below!)
         </li>
       </ul>
       <h3 id="maintenance-future-expansion">
