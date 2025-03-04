@@ -1,4 +1,4 @@
 / /pages/index.html 200
 
-# Catch-all rule for all .html files
-/:path /:path.html 200
+# Rewrite clean URLs to HTML files inside 'pages' directory
+/:path /pages/:path.html 200
