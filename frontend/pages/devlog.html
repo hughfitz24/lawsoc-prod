@@ -85,12 +85,15 @@
       <h3 id="technical-stack">Technical Stack</h3>
       <p>
         To get a balance between simplicity, performance, and cost, I opted for
-        a static-site architecture with selective dynamic elements:
+        a static-site architecture with selective dynamic elements. 
+      </p>
+      <p>
+        Initial testing involved the use of GCS buckets, but limitations with SEO and limited iteropability with Cloudflare proved difficult.
+        The production launch was done with the following architecture:
       </p>
       <ul>
         <li>
-          Static Hosting: Google Cloud Storage Buckets with HTML/CSS/JS
-          frontend.
+          Static Hosting: Cloudflare Pages, with Git integration for full CI/CD.
         </li>
         <li>CDN &amp; Security: Cloudflare CDN with proxy and caching.</li>
         <li>
@@ -173,8 +176,8 @@
       <p>
         With this foundation, the UCD Law Society website is built to be fast,
         secure, and future-proof. I prioritised low-cost development, with a
-        cost reduction from 70 Euro Per Year to just over 6 Euro Per Year
-        (projected by GCP). This was a great project, and many thanks to Emma
+        cost reduction from 70 Euro Per Year to just over 1 Euro Per Year
+        (projected by GCP for the serverless functions). This was a great project, and many thanks to Emma
         and the rest of the LawSoc team for letting me take it on!
       </p>
       </p>
