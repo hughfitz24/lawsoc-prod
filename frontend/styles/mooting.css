@@ -1,4 +1,4 @@
-/* External Debating Page Styles - Following Site Pattern */
+/* Mooting & Mock Trials Page Styles - Following Site Pattern */
 
 #intro {
     background-image: 
@@ -6,9 +6,9 @@
             rgba(0, 0, 0, 0.5), 
             rgba(0, 0, 0, 0.5)  
         ),
-        url('../images/eudc.jpg'); 
+        url('../images/mooting.jpeg'); 
     background-size: cover; 
-    background-position: top; 
+    background-position: center; 
     background-repeat: no-repeat; 
     color: white; 
     text-align: center;
@@ -78,15 +78,15 @@
     margin: 0;
 }
 
-/* Achievement Grid */
-.achievement-grid {
+/* Skills Grid */
+.skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
-.achievement-card {
+.skill-card {
     background-color: #f8f8f8;
     padding: 30px;
     border-radius: 8px;
@@ -94,83 +94,203 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.achievement-card:hover {
+.skill-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.achievement-card i {
+.skill-card i {
     font-size: 2rem;
     color: #ba1b18;
     margin-bottom: 15px;
 }
 
-.achievement-card h4 {
+.skill-card h4 {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     color: #333;
     margin-bottom: 10px;
 }
 
-.achievement-card p {
+.skill-card p {
     font-family: 'Lora', serif;
     color: #666;
     line-height: 1.6;
 }
 
-/* FAQ Section */
-.faq-section {
+/* Achievement Highlight */
+.achievement-highlight {
+    background: linear-gradient(135deg, #ba1b18, #9e1d18);
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 40px;
+    color: white;
+}
+
+.achievement-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.achievement-content i {
+    font-size: 3rem;
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.achievement-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin: 0 0 10px 0;
+    color: white;
+}
+
+.achievement-text p {
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.95;
+    color: white;
+}
+
+/* Competitions Section */
+.competitions-section {
     background-color: #f4f4f4;
 }
 
-.faq-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+.semester-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
 }
 
-.faq-item {
+.semester-card {
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.faq-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.semester-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.faq-question {
+.semester-header {
     background-color: #ba1b18;
     color: white;
-    padding: 20px;
+    padding: 25px;
+    text-align: center;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 15px;
 }
 
-.faq-question i {
-    font-size: 1.2rem;
-    flex-shrink: 0;
+.semester-header i {
+    font-size: 1.5rem;
 }
 
-.faq-question h4 {
+.semester-header h4 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     margin: 0;
-    font-weight: 600;
 }
 
-.faq-answer {
+.competitions-list {
     padding: 25px;
 }
 
-.faq-answer p {
+.competition-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.competition-item:last-child {
+    border-bottom: none;
+}
+
+.competition-date {
+    background-color: #ba1b18;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
     font-family: 'Lora', serif;
-    line-height: 1.7;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.competition-details h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
     color: #333;
+    margin: 0 0 5px 0;
+}
+
+.sponsor {
+    font-family: 'Lora', serif;
+    color: #666;
+    font-style: italic;
     margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Travel Section */
+.travel-section {
+    background: linear-gradient(135deg, #ba1b18, #9e1d18);
+    color: white;
+}
+
+.travel-section .section-header h3 {
+    color: white;
+}
+
+.travel-section .section-header i {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.travel-section p {
+    color: white;
+    opacity: 0.95;
+}
+
+.travel-section * {
+    color: white;
+}
+
+.travel-destinations {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.destination-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.destination-tag:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 /* Call to Action Section */
@@ -279,24 +399,44 @@
         font-size: 2rem;
     }
     
-    .achievement-grid {
+    .skills-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
     
-    .achievement-card {
+    .skill-card {
         padding: 25px;
     }
     
-    .faq-question {
-        padding: 15px;
+    .achievement-content {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
+        gap: 15px;
     }
     
-    .faq-answer {
-        padding: 20px;
+    .semester-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .competition-item {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .competition-date {
+        align-self: center;
+    }
+    
+    .travel-destinations {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .destination-tag {
+        justify-content: center;
+        min-width: 150px;
     }
     
     .cta-actions {
@@ -329,7 +469,16 @@
         font-size: 1.6rem;
     }
     
-    .achievement-card {
+    .skill-card {
         padding: 20px;
+    }
+    
+    .semester-card {
+        margin: 0 10px;
+    }
+    
+    .semester-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }

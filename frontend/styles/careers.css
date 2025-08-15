@@ -1,4 +1,4 @@
-/* External Debating Page Styles - Following Site Pattern */
+/* Careers & Academic Support Page Styles - Following Site Pattern */
 
 #intro {
     background-image: 
@@ -6,9 +6,9 @@
             rgba(0, 0, 0, 0.5), 
             rgba(0, 0, 0, 0.5)  
         ),
-        url('../images/eudc.jpg'); 
+        url('../images/careers.jpg'); 
     background-size: cover; 
-    background-position: top; 
+    background-position: center; 
     background-repeat: no-repeat; 
     color: white; 
     text-align: center;
@@ -78,104 +78,146 @@
     margin: 0;
 }
 
-/* Achievement Grid */
-.achievement-grid {
+/* Career Development Section */
+.career-section {
+    background-color: #f4f4f4;
+}
+
+.career-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
-.achievement-card {
-    background-color: #f8f8f8;
+.career-card {
+    background-color: white;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.achievement-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+.career-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-.achievement-card i {
-    font-size: 2rem;
+.career-icon {
+    margin-bottom: 20px;
+}
+
+.career-icon i {
+    font-size: 2.5rem;
     color: #ba1b18;
+}
+
+.career-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #333;
     margin-bottom: 15px;
 }
 
-.achievement-card h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.achievement-card p {
+.career-card p {
     font-family: 'Lora', serif;
     color: #666;
     line-height: 1.6;
 }
 
-/* FAQ Section */
-.faq-section {
-    background-color: #f4f4f4;
+/* Academic Support Section */
+.academic-section {
+    background: linear-gradient(135deg, #f8f8f8, #e8e8e8);
 }
 
-.faq-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+.academic-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
-.faq-item {
+.academic-feature {
     background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.faq-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.academic-feature:hover {
+    transform: translateY(-5px);
 }
 
-.faq-question {
-    background-color: #ba1b18;
-    color: white;
-    padding: 20px;
+.feature-header {
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-bottom: 15px;
 }
 
-.faq-question i {
-    font-size: 1.2rem;
+.feature-header i {
+    font-size: 2rem;
+    color: #ba1b18;
     flex-shrink: 0;
 }
 
-.faq-question h4 {
+.feature-header h4 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    margin: 0;
-    font-weight: 600;
-}
-
-.faq-answer {
-    padding: 25px;
-}
-
-.faq-answer p {
-    font-family: 'Lora', serif;
-    line-height: 1.7;
+    font-size: 1.4rem;
     color: #333;
     margin: 0;
 }
 
+.academic-feature p {
+    font-family: 'Lora', serif;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Community Section */
+.community-section {
+    background: linear-gradient(135deg, #ba1b18, #9e1d18);
+    color: white;
+}
+
+.community-highlight {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.community-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.community-content i {
+    font-size: 4rem;
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.community-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin: 0 0 15px 0;
+    color: white;
+}
+
+.community-text p {
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.95;
+    color: white;
+}
+
 /* Call to Action Section */
 .cta-section {
-    background: linear-gradient(135deg, #ba1b18, #9e1d18);
+    background: linear-gradient(135deg, #333, #555);
     color: white;
     text-align: center;
 }
@@ -232,7 +274,7 @@
     align-items: center;
     gap: 10px;
     background-color: white;
-    color: #ba1b18;
+    color: #333;
     text-decoration: none;
     font-family: 'Lora', serif;
     font-weight: 600;
@@ -246,7 +288,7 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-decoration: none;
-    color: #ba1b18;
+    color: #333;
 }
 
 .cta-button.secondary {
@@ -257,7 +299,7 @@
 
 .cta-button.secondary:hover {
     background-color: white;
-    color: #ba1b18;
+    color: #333;
 }
 
 /* Mobile Responsiveness */
@@ -279,24 +321,30 @@
         font-size: 2rem;
     }
     
-    .achievement-grid {
+    .career-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 25px;
     }
     
-    .achievement-card {
+    .career-card {
         padding: 25px;
     }
     
-    .faq-question {
-        padding: 15px;
+    .academic-features {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .community-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .feature-header {
         flex-direction: column;
         text-align: center;
         gap: 10px;
-    }
-    
-    .faq-answer {
-        padding: 20px;
     }
     
     .cta-actions {
@@ -329,7 +377,19 @@
         font-size: 1.6rem;
     }
     
-    .achievement-card {
+    .career-card {
         padding: 20px;
+    }
+    
+    .academic-feature {
+        padding: 25px;
+    }
+    
+    .community-content i {
+        font-size: 3rem;
+    }
+    
+    .community-text h4 {
+        font-size: 1.5rem;
     }
 }

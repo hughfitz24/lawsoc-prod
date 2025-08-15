@@ -1,4 +1,4 @@
-/* External Debating Page Styles - Following Site Pattern */
+/* Junior Schools Debating Page Styles - Following Site Pattern */
 
 #intro {
     background-image: 
@@ -6,9 +6,9 @@
             rgba(0, 0, 0, 0.5), 
             rgba(0, 0, 0, 0.5)  
         ),
-        url('../images/eudc.jpg'); 
+        url('../images/jschools.jpg'); 
     background-size: cover; 
-    background-position: top; 
+    background-position: center; 
     background-repeat: no-repeat; 
     color: white; 
     text-align: center;
@@ -78,99 +78,185 @@
     margin: 0;
 }
 
-/* Achievement Grid */
-.achievement-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.achievement-card {
-    background-color: #f8f8f8;
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.achievement-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.achievement-card i {
-    font-size: 2rem;
-    color: #ba1b18;
-    margin-bottom: 15px;
-}
-
-.achievement-card h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.achievement-card p {
-    font-family: 'Lora', serif;
-    color: #666;
-    line-height: 1.6;
-}
-
-/* FAQ Section */
-.faq-section {
+/* History & Legacy Section */
+.history-section {
     background-color: #f4f4f4;
 }
 
-.faq-grid {
-    display: flex;
-    flex-direction: column;
+.legacy-content {
+    margin-top: 40px;
+}
+
+.founder-highlight {
+    margin-bottom: 40px;
+}
+
+.founder-card {
+    background: linear-gradient(135deg, #ba1b18, #9e1d18);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.founder-card i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.founder-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.founder-card p {
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.95;
+    color: white;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.achievement-item {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-item i {
+    font-size: 2rem;
+    color: #ba1b18;
+    margin-bottom: 10px;
+}
+
+.achievement-item h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.achievement-item p {
+    font-family: 'Lora', serif;
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Impact Section */
+.impact-section {
+    background: linear-gradient(135deg, #f8f8f8, #e8e8e8);
+}
+
+.impact-content {
+    margin-top: 40px;
+}
+
+.impact-description {
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.impact-description p {
+    font-family: 'Lora', serif;
+    color: #333;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.skills-development {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 25px;
 }
 
-.faq-item {
+.skill-item {
     background-color: white;
+    padding: 25px;
     border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.faq-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.faq-question {
-    background-color: #ba1b18;
-    color: white;
-    padding: 20px;
     display: flex;
     align-items: center;
     gap: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-.faq-question i {
-    font-size: 1.2rem;
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.skill-item i {
+    font-size: 1.8rem;
+    color: #ba1b18;
     flex-shrink: 0;
 }
 
-.faq-question h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    margin: 0;
-    font-weight: 600;
-}
-
-.faq-answer {
-    padding: 25px;
-}
-
-.faq-answer p {
+.skill-item span {
     font-family: 'Lora', serif;
-    line-height: 1.7;
+    font-weight: 600;
     color: #333;
+}
+
+/* Success Section */
+.success-section {
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+}
+
+.success-highlight {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.success-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.success-content i {
+    font-size: 4rem;
+    flex-shrink: 0;
+    color: gold;
+}
+
+.success-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin: 0 0 15px 0;
+    color: white;
+}
+
+.success-text p {
+    font-family: 'Lora', serif;
+    line-height: 1.6;
     margin: 0;
+    opacity: 0.95;
+    color: white;
 }
 
 /* Call to Action Section */
@@ -279,24 +365,30 @@
         font-size: 2rem;
     }
     
-    .achievement-grid {
+    .achievements-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
     
-    .achievement-card {
-        padding: 25px;
+    .skills-development {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
     
-    .faq-question {
-        padding: 15px;
+    .skill-item {
         flex-direction: column;
         text-align: center;
         gap: 10px;
     }
     
-    .faq-answer {
-        padding: 20px;
+    .success-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .founder-card {
+        padding: 25px;
     }
     
     .cta-actions {
@@ -329,7 +421,23 @@
         font-size: 1.6rem;
     }
     
-    .achievement-card {
+    .founder-card {
         padding: 20px;
+    }
+    
+    .founder-card h4 {
+        font-size: 1.5rem;
+    }
+    
+    .achievement-item {
+        padding: 20px;
+    }
+    
+    .success-content i {
+        font-size: 3rem;
+    }
+    
+    .success-text h4 {
+        font-size: 1.5rem;
     }
 }
