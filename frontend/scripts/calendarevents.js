@@ -1,22 +1,7 @@
-// Your Google Calendar ID (public information)
+// Your Google Calendar API key
+const API_KEY = 'AIzaSyCZQDfkaeojRYiHVN9Vx9NgLSNfGLJvMoM';
+// Your Google Calendar ID
 const CALENDAR_ID = 'c_273faa41315d4c8fbeadb338d4d8d6d08edad9814e7ba417d0b408e1cc565f56@group.calendar.google.com';
-
-// Backend endpoint to retrieve the API key
-const API_KEY_ENDPOINT = 'https://us-central1-lawsocie-prod.cloudfunctions.net/get-secret';
-
-async function getApiKey() {
-    try {
-        const response = await fetch(API_KEY_ENDPOINT);
-        if (!response.ok) {
-            throw new Error('Failed to fetch API key from backend');
-        }
-        const { secret } = await response.json(); // Assume backend responds with { secret: "your-key" }
-        return secret;
-    } catch (error) {
-        console.error('Error fetching API key:', error);
-        throw error;
-    }
-}
 
 function formatReadableDate(dateString) {
     const date = new Date(dateString);
@@ -51,10 +36,7 @@ function generateCalendarLink(event) {
 
 async function loadGoogleCalendarEvents() {
     try {
-        // Fetch the API key from backend
-        const API_KEY = await getApiKey();
-
-        // Get the current date and the date 10 days from now
+        // Get the current date and the date 8 days from now
         const now = new Date();
         const nextWeek = new Date();
         nextWeek.setDate(now.getDate() + 8);
@@ -63,7 +45,7 @@ async function loadGoogleCalendarEvents() {
         const timeMin = now.toISOString();
         const timeMax = nextWeek.toISOString();
 
-        // URL to fetch events within the date range
+        // URL to fetch events within the date range using API key
         const API_URL = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${API_KEY}&timeMin=${encodeURIComponent(timeMin)}&timeMax=${encodeURIComponent(timeMax)}&orderBy=startTime&singleEvents=true`;
 
         const response = await fetch(API_URL);

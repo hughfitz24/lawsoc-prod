@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UCD Law Society Events Calendar - Stay up to date with all upcoming events, debates, and activities.">
+    <title>Events Calendar - UCD Law Society</title>
+    <link rel="icon" href="images/ucdlawsoc.png" type="image/png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/calendar.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        #intro {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.5),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url("images/sutherlandstairs.jpeg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          color: white;
+          text-align: center;
+          height: 30em;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-weight: 100;
+          font-optical-sizing: auto;
+          font-style: normal;
+          margin-bottom: 3em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="header"></header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Hero Section -->
+        <div id="intro">
+            <h2><i class="fas fa-calendar-alt"></i> Events Calendar</h2>
+        </div>
+        
+        <!-- Introduction Text -->
+        <div id="introtext">
+            <p>Stay connected with all Law Society events, debates, and opportunities throughout the academic year.</p>
+            <p>Navigate through weeks to see what's happening and never miss an important event.</p>
+        </div>
+
+        <!-- Calendar Navigation -->
+        <div id="calendar-navigation">
+            <button id="prev-week" class="nav-button">
+                <i class="fas fa-chevron-left"></i> Previous Week
+            </button>
+            <h3 id="current-week-title">Loading...</h3>
+            <button id="next-week" class="nav-button">
+                Next Week <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading-message" style="display: none;">
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <p>Loading events from Google Calendar...</p>
+        </div>
+
+        <!-- Main Calendar Content -->
+        <div id="mainbody">
+            <div id="weekly-calendar-grid">
+                <!-- Calendar will be populated by JavaScript -->
+            </div>
+            
+            <!-- No Events Message -->
+            <div id="no-events" style="display: none;">
+                <i class="fas fa-calendar-times"></i>
+                <h4>No Events This Week</h4>
+                <p>There are currently no events scheduled for this week. Check back later or browse other weeks.</p>
+                <button onclick="loadCalendarWeek()" class="retry-button">
+                    <i class="fas fa-refresh"></i> Try Again
+                </button>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div id="conc">
+            <h4><i class="fas fa-bell"></i> Never Miss an Event</h4>
+            <p>Subscribe to our Google Calendar to get automatic updates and reminders for all Law Society events.</p>
+            <a href="https://calendar.google.com/calendar/u/0?cid=c_273faa41315d4c8fbeadb338d4d8d6d08edad9814e7ba417d0b408e1cc565f56@group.calendar.google.com" 
+               class="subscribe-button" target="_blank">
+                <i class="fab fa-google"></i> Subscribe to Calendar
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="footer"></footer>
+    
+    <!-- Scripts -->
+    <script src="scripts/calendar-weekly.js"></script>
+    <script src="scripts/headerfooter.js"></script>
+</body>
+</html>

@@ -1,0 +1,579 @@
+/* Sponsorship Page Styles */
+
+/* Sponsorship Intro Section */
+#sponsorship-intro {
+    text-align: center;
+    padding: 4em 2em;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+}
+
+#sponsorship-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1em;
+    color: #333;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+#sponsorship-intro p {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    color: #555;
+    margin: 0 auto;
+    max-width: 800px;
+    line-height: 1.6;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Member CTA Section */
+#member-cta {
+    background-color: #ba1b18;
+    color: white;
+    padding: 4em 2em;
+    position: relative;
+}
+
+.cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 1em;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.cta-content h3 i {
+    color: #ffd700;
+    margin-right: 0.5em;
+}
+
+.cta-content p {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2em;
+    color: rgba(255, 255, 255, 1);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5em;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-btn.primary {
+    background: rgba(255, 255, 255, 1);
+    color: #ba1b18;
+    border: 2px solid white;
+}
+
+.cta-btn.primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.cta-btn i {
+    margin-right: 0.5em;
+}
+
+/* Sponsors Header */
+#sponsors-header {
+    text-align: center;
+    padding: 3em 2em 2em;
+    background-color: #fff;
+}
+
+#sponsors-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+#sponsors-header p {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Sponsors Section */
+#sponsors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5em;
+    padding: 4em 2em;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#sponsors .sponsor-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+#sponsors .sponsor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+#sponsors .sponsor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #ba1b18;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+#sponsors .sponsor-card:hover::before {
+    transform: scaleX(1);
+}
+
+.sponsor-image {
+    width: 100%;
+    height: 200px;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.sponsor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.sponsor-image:hover img {
+    transform: scale(1.05);
+}
+
+.sponsor-content {
+    padding: 2em;
+    text-align: center;
+}
+
+#sponsors .sponsor-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1em;
+    color: #333;
+    font-weight: 700;
+}
+
+#sponsors .sponsor-card p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+}
+
+.sponsor-offer-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8em 2em;
+    background: #ba1b18;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(186, 27, 24, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.sponsor-offer-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.sponsor-offer-btn:hover::before {
+    left: 100%;
+}
+
+.sponsor-offer-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(186, 27, 24, 0.4);
+    background: #9e1d18;
+}
+
+.sponsor-offer-btn i {
+    margin-left: 0.5em;
+    transition: transform 0.3s ease;
+}
+
+.sponsor-offer-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Bottom CTA Section */
+#bottom-cta {
+    background-color: #333;
+    color: white;
+    padding: 5em 2em;
+    position: relative;
+}
+
+.bottom-cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.bottom-cta-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    margin-bottom: 0.8em;
+    color: white;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.bottom-cta-container > p {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 3em;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    color: white;
+}
+
+.bottom-cta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5em;
+    margin-bottom: 4em;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.cta-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5em 2em;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #ba1b18;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.cta-card:hover::before {
+    transform: scaleX(1);
+}
+
+.cta-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.cta-card i {
+    font-size: 2.5rem;
+    color: #ba1b18;
+    margin-bottom: 1em;
+    display: block;
+}
+
+.cta-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.8em;
+    color: white;
+}
+
+.cta-card p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: white;
+    opacity: 0.85;
+    line-height: 1.5;
+    margin-bottom: 1.5em;
+}
+
+.cta-card a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Lora', serif;
+    transition: color 0.3s ease;
+    position: relative;
+    background: #ba1b18;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.cta-card a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.cta-card a:hover {
+    background: #9e1d18;
+}
+
+.cta-card a:hover::after {
+    width: 100%;
+}
+
+.social-follow {
+    text-align: center;
+    padding-top: 3em;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.social-follow h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5em;
+    color: white;
+}
+
+.social-follow > p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    margin-bottom: 2em;
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+    background: #ba1b18;
+    border-color: #ba1b18;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(186, 27, 24, 0.3);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #sponsors {
+        grid-template-columns: 1fr;
+        gap: 2em;
+        padding: 3em 1.5em;
+    }
+
+    #sponsorship-intro, #sponsors-header {
+        padding: 3em 1.5em;
+    }
+
+    #member-cta {
+        padding: 3em 1.5em;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    #bottom-cta {
+        padding: 4em 1.5em;
+    }
+
+    .bottom-cta-grid {
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+
+    .social-links {
+        gap: 0.8em;
+    }
+
+    .sponsor-content {
+        padding: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    #sponsors {
+        padding: 2em 1em;
+        gap: 1.5em;
+    }
+
+    #sponsorship-intro, #sponsors-header {
+        padding: 2em 1em;
+    }
+
+    #member-cta {
+        padding: 2.5em 1em;
+    }
+
+    .cta-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .cta-content p {
+        font-size: 1.1rem;
+    }
+
+    #bottom-cta {
+        padding: 3em 1em;
+    }
+
+    .cta-card {
+        padding: 2em 1.5em;
+    }
+
+    .cta-card i {
+        font-size: 2rem;
+    }
+
+    .cta-card h4 {
+        font-size: 1.3rem;
+    }
+
+    .social-link {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+
+    .sponsor-image {
+        height: 150px;
+    }
+
+    .sponsor-content {
+        padding: 1.2em;
+    }
+
+    #sponsors .sponsor-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .sponsor-offer-btn {
+        padding: 0.7em 1.5em;
+        font-size: 0.9rem;
+    }
+}
+
